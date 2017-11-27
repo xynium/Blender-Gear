@@ -23,7 +23,7 @@ bl_info = {
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Add-Mesh-Gear.py",
     "tracker_url": "https://developer.blender.org/maniphest/task/edit/form/2/",
     "support": "TESTING",
-    "category": "Add Mesh"
+    "category": "Test Mesh"
 }
 
 
@@ -131,22 +131,22 @@ class INFO_MT_mesh_gear_add2(bpy.types.Menu):
 
 
 # Define "Extras" menu
-def menu_func(self, context):
-    layout = self.layout
-    layout.operator_context = 'INVOKE_REGION_WIN'
+#def menu_func(self, context):
+#    layout = self.layout
+#    layout.operator_context = 'INVOKE_REGION_WIN'
     # layout.menu("INFO_MT_mesh_gear_add2", text="Gear", icon="PLUGIN")
-    layout.operator("Gear.mesh.primitive_animate_gear", text="Animate Gear")
-    layout.operator("Gear.mesh.primitive_gear",  text="Mesh Gear")
+#    layout.operator("Gear.mesh.primitive_animate_gear", text="Animate Gear")
+#    layout.operator("Gear.mesh.primitive_gear",  text="Mesh Gear")
 
 
 def register():
     bpy.utils.register_module(__name__)
-    bpy.types.INFO_MT_mesh_add.append(menu_func)
+
 
 
 def unregister():
     bpy.utils.unregister_module(__name__)
-    bpy.types.INFO_MT_mesh_add.remove(menu_func)
+ #   bpy.types.INFO_MT_mesh_add.remove(menu_func)
 
 
 if __name__ == "__main__":
